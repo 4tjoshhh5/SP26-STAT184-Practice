@@ -1,9 +1,25 @@
 ---
-title: "Quarto Project"
+title: "Quarto 4.3"
 author: "Joshua Tanyi"
-date: "April 13, 2026"
+date: "2026-04-13"
+date-modified: "2026-04-20"
 format: pdf
+execute:
+  echo: false
+  warning: false
+  message: false
 ---
+```{r}
+#| label: setup
+#| include: false
+
+# Coding style: Tidyverse Style Guide
+
+library(rvest)
+library(tidyverse)
+library(kableExtra)
+library(scales)
+```
 
 ## Section 1: Busiest Airports Analysis
 
@@ -15,13 +31,12 @@ As shown in @tbl-airports passenger traffic varies across six of the busiest air
 ```{r}
 #| echo: false
 #| message: false
+#| label: wrangle-airports
+
+
+# Coding style: Tidyverse Style Guide
 
 #WRANGLING AIRPORT DATA
-# load packages
-library(rvest)
-library(tidyverse)
-library(kableExtra)
-library(scales)
 
 url <- "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
 
@@ -109,6 +124,7 @@ Additionally, while all six airports are among the busiest in the world, there a
 #| warning: false
 #| label: fig-airports
 #| fig-cap: "Passenger traffic trends (in millions) for the six busiest airports from 2020 to 2025"
+#| fig-alt: "Line plot showing passenger traffic trends from 2020 to 2025 for six major airports"
 
 #PLOTTING AIRPORT DATA
 ggplot(airport_data, aes(x = year, y = passengers / 1e6, color = airport)) +
@@ -145,7 +161,6 @@ In this section, I use the Monte Carlo method to estimate the value of an integr
 #| aria-describedby: monteCarloLD
 
 #WRANGLING MONTE CARLO DATA AND PLOTTING
-library(tidyverse)
 
 # function to simulate random points in the rectangle
 monte_carlo_points <- function(n, x_min, x_max, y_min, y_max) {
