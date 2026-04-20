@@ -40,10 +40,10 @@ The data used in this project includes:
 
 
 .
-├── hw4_3analysis.qmd # Main Quarto source file
-├── hw4_3_output.pdf # Final rendered report
-├── README.md # Project documentation
-├── plan.md   # Project planning document
+1. hw4_3analysis.qmd # Main Quarto source file
+2. hw4_3_output.pdf # Final rendered report
+3. README.md # Project documentation
+4. plan.md   # Project planning document
 
 
 ---
